@@ -8,12 +8,12 @@ pygame.init()
 #DISPLAYSURF = pygame.display.set_mode((400, 300))
 #pygame.display.set_caption('Hello World!')
 clock = pygame.time.Clock()
-back = (134, 245,198)
+back = (154, 196, 248)
 mw = pygame.display.set_mode((500, 500))
 mw.fill(back)
 
-BLACK = (0, 0, 0)
-LIGHT_BLUE = (200, 200, 255)
+BLACK = (35, 22, 81)
+LIGHT_BLUE = (215, 217, 177)
 
 
 class TextArea():
