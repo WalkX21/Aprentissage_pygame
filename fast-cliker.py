@@ -9,7 +9,7 @@
 #while True:
 #    pass
 import sys
-
+import time
 import pygame
 from pygame.locals import QUIT
 from random import randint
@@ -38,19 +38,36 @@ class TextArea():
         pygame.draw.rect(mw, self.fill_color, self.rect)
         mw.blit(self.image, (self.rect.x + shift_x, self.rect.y + shift_y) )
 
+
+
+
+timer1 = pygame.time.Clock()
+
 point1 = 0
-timer1 = 0
-quest_card = TextArea(50,100,150,250,LIGHT_BLUE)
-quest_card.set_text("",50)
 
-quest_card1 = TextArea(250,100,150,250,LIGHT_BLUE)
-quest_card1.set_text("",50)
+cards = []
+num_cards = 4
+pizza = "clic"
+x = 50
 
-quest_card2 = TextArea(450,100,150,250,LIGHT_BLUE)
-quest_card2.set_text("",50)
+for i in range(num_cards):
+    new_card=TextArea(x,100,150,250,LIGHT_BLUE)
+    new_card.set_text(pizza,50)
+    cards.append(new_card)
+    x = x + 200
+    
 
-quest_card3 = TextArea(650,100,150,250,LIGHT_BLUE)
-quest_card3.set_text("",50)
+#quest_card = TextArea(50,100,150,250,LIGHT_BLUE)
+#quest_card.set_text("",50)
+
+#quest_card1 = TextArea(250,100,150,250,LIGHT_BLUE)
+#quest_card1.set_text("",50)
+
+#quest_card2 = TextArea(450,100,150,250,LIGHT_BLUE)
+#quest_card2.set_text("",50)
+
+# quest_card3 = TextArea(650,100,150,250,LIGHT_BLUE)
+# quest_card3.set_text("",50)
 
 timer = TextArea(250,400,150,100,LIGHT_BLUE)
 timer.set_text("Timer: "+str(timer1),50)
@@ -62,20 +79,31 @@ point.set_text("pts: "+str(point1),50)
 
 
 
+
 while True:
     pygame.display.update()
-    quest_card.draw(10,10)
-    quest_card1.draw(10,10)
-    quest_card2.draw(10,10)
-    quest_card3.draw(10,10)
+
+    
+    
+    
+    # quest_card.draw(10,10)
+    # quest_card1.draw(10,10)
+    # quest_card2.draw(10,10)
+    # quest_card3.draw(10,10)
     timer.draw(10,10)
     point.draw(10,10)
+
+    for new_card in cards:
+        new_card.draw(10,30)
+
+
+
 
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
         
-        
+    
     clock.tick(40)
 

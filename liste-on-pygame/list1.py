@@ -13,5 +13,7 @@ while a != '0':
 
 
 participant.sort()
+
+
 print(participant)
     
